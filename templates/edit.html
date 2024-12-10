@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'static\css\style.css' %}">
+    <title>{% block title %} EDIT {% endblock %} </title>
+</head>
+<body>
+
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="">Атынызды жазыныз</label>
+            <input type="text" name="name" id="" value="{{ user.name }}">
+            <label for="">Жашынызды жазыныз</label>
+            <input type="number" name="age" id="" value="{{user.age}}">
+            <input type="submit" value="Сактоо">
+        </form>
+    </div>
+
+</body>
+</html>
